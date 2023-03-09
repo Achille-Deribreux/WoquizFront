@@ -1,0 +1,45 @@
+<h4>Quiz Time !</h4>
+
+<div *ngIf="!quizReady">
+  <h6>Select the quiz you want : </h6>
+  <form [formGroup]="quizChoices" (ngSubmit)="submitQuizChoices()">
+    <mat-form-field appearance="fill">
+      <mat-label>How many words you want in the quiz ?</mat-label>
+      <input formControlName="nrOfWords" matInput placeholder="How many words ?" type="number">
+      <mat-hint>Enter how many words you want in your quiz</mat-hint>
+    </mat-form-field>
+
+    <section>
+      <mat-checkbox formControlName="easy">easy</mat-checkbox>
+      <mat-checkbox formControlName="medium">medium</mat-checkbox>
+      <mat-checkbox formControlName="hard">hard</mat-checkbox>
+    </section>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </form>
+</div>
+
+<!--<div *ngIf="quizReady">-->
+<!--  <h6>Answer the questions :</h6>-->
+<!--  <form [formGroup]="quizQuestions" (ngSubmit)="submitQuizAnswers()">-->
+
+
+<!--    <mat-form-field *ngFor="let word of takeQuiz.wordList" appearance="fill">-->
+<!--      <mat-label>translate : {{word}}</mat-label>-->
+<!--      <input formControlName="{{word}}" matInput placeholder="translate : {{word}}">-->
+<!--      <mat-hint>translate : {{word}}</mat-hint>-->
+<!--    </mat-form-field>-->
+
+<!--    <section>-->
+<!--      <mat-checkbox [(ngModel)]="levels.EASY">easy</mat-checkbox>-->
+<!--      <mat-checkbox [(ngModel)]="levels.MEDIUM">medium</mat-checkbox>-->
+<!--      <mat-checkbox [(ngModel)]="levels.HARD">hard</mat-checkbox>-->
+<!--    </section>-->
+
+<!--    <mat-card-actions>-->
+<!--      <button mat-raised-button color="primary" type="submit">Submit</button>-->
+<!--    </mat-card-actions>-->
+<!--  </form>-->
+<!--</div>-->
